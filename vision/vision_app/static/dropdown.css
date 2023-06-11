@@ -1,0 +1,62 @@
+.dropbtn {
+  background-color: transparent;
+  font-size: 1.0em;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-variant: small-caps;
+  color: white;   
+  border: none;
+outline: none;
+}
+
+.dropdown {
+margin-left: 25px;
+  position: relative;
+  display: inline-block;
+  
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 30px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  font-size: 0.8em;
+  color: black;
+  padding: 12px 16px;
+text-decoration: none;
+display: block;
+text-align: left;
+  
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content
+ {display:contents;
+}
+
+.dropdown::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #fff;
+  border-radius: 4px;
+  scale: 0 1;
+  transform-origin: left;
+  transition: scale 0.25s;
+}
+
+.dropdown:hover::before {
+  scale: 1;
+} 

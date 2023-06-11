@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/site.css">
+    <link rel="stylesheet" href="/static/inputs.css">
+    <link rel="stylesheet" href="/static/dropdown.css">
+    <link rel="stylesheet" href="/static/login2.css">
+    <link rel="stylesheet" href="/static/navbar2.css">
+    <script src='/static/burgermenu.js'></script>
+    <script src='/static/position.js'></script>
+    <title>Login</title>
+    <style>
+    input[type=submit] {
+    font-family: "Asap", sans-serif;
+    cursor: pointer;
+    color: #fff;
+    text-transform: uppercase;
+    width: 80px;
+    border: 0;
+    padding: 10px 0;
+    margin-top: 10px;
+    margin-left: -5px;
+    border-radius: 5px;
+    background-color: #534f44;
+    -webkit-transition: background-color 300ms;
+    -moz-transition: background-color 300ms;
+    transition: background-color 300ms;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="navbar">
+        <div class="topnav-right">
+            <a href="{{ url_for('home') }}" class="navbar-brand">Home</a>
+        </div>
+        <span style="font-size:30px;cursor:pointer" onclick="toggleNav()">&#9776;</span> 
+        <div id="mySidepanel" class="sidepanel">
+            <a href="{{ url_for('about2') }}" class="navbar-item">About</a>
+            <a href="{{ url_for('focus') }}" class="navbar-item">Focus</a>
+            <a href="{{ url_for('classes') }}" class="navbar-item">Classes</a>
+            <a href="{{ url_for('calendar') }}" class="navbar-item">Calendar</a>
+            <a href="{{ url_for('checklist') }}"class="navbar-item">Checklist</a>
+            <a href="{{ url_for('settings') }}" class="navbar-item">Settings</a>
+            <a href="{{ url_for('logout_user') }}" class="navbar-item">Logout</a>
+        </div>
+    </div>
+      
+    <form class="login2" action='/users' method='post'>
+        <h1>Welcome to Mangrove</h1>   
+        <input name="Username" type="text" required placeholder="Username">
+        <input name="Password" type="password" required placeholder="Password">
+        <input type ="submit" value="Log In">
+        <div class ="foot-lnk">
+            <a href="{{ url_for('register') }}"class= "foot-lnk">Don't have an account? Sign up!</a>
+        </div>
+      </form>
+</body>
+
+</html>

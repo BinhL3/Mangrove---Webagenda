@@ -1,0 +1,60 @@
+.centeredinput{
+    border-color: linear-gradient(180deg,  rgb(73,100,86) 0%,rgb(134, 177, 155) 100%);
+    text-align: center;
+    left: 20%;
+    position: absolute;
+    font-size: 1rem;
+    border-radius: 31px;
+    border-color:  rgb(73,100,86);
+}
+.txt_field {
+    color: rgb(243, 243, 243);
+    left: 200px;
+    width: 50px;
+}
+.box {
+    padding: 10px;
+    margin: 15px;
+    justify-content: flex-start;
+    position:relative;
+    background-color: transparent;
+    background-image: linear-gradient(180deg,  rgb(73,100,86) 0%,rgb(134, 177, 155) 100%);
+    transform: scale(1.2);
+    border-radius: 32px;
+    background: linear-gradient(90deg, rgb(73,100,86),rgb(134, 177, 155));
+    background-size: 400% 400%;
+    animation: anim 5s infinite ease-in-out;
+  }
+  .boxregister {
+    padding: 10px;
+    margin: 15px;
+    justify-content: flex-start;
+    position:relative;
+    background-color: transparent;
+    background-image: linear-gradient(180deg,  rgb(73,100,86) 0%,rgb(134, 177, 155) 100%);
+    transform: scale(1.2);
+    border-radius: 32px;
+    background: linear-gradient(90deg, rgb(73,100,86),rgb(134, 177, 155));
+    background-size: 400% 400%;
+    animation: 3s slide-left;
+    animation-fill-mode: forwards;  
+  }
+  
+  @keyframes slide-left {
+  0% {left:0px; top:0px;}
+  100% {left:-475px; top:0px;}
+  }
+
+  @keyframes anim {
+    0% {
+        background-position: 0 25%;
+    }
+
+    50% {
+        background-position: 80% 75%;
+    }
+
+    100% {
+        background-position: 0 50%;
+    }
+}

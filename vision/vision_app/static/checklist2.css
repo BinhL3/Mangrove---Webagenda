@@ -1,0 +1,19 @@
+.backgroundbox {
+    text-align: center;
+  }
+
+  .chat-container {
+    height: 200px; /* Set the desired height of the chat container */
+    overflow-y: auto; /* Enable vertical scrolling */
+  }
+  
+  .chat-messages {
+    margin-bottom: 10px;
+  }
+  
+  .chat-response {
+    background-color: #f2f2f2;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+  }

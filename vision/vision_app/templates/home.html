@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/site.css">
+    <link rel="stylesheet" href="/static/inputs.css">
+    <link rel="stylesheet" href="/static/buttons.css">
+    <link rel="stylesheet" href="/static/dropdown.css">
+    <link rel="stylesheet" href="/static/login2.css">
+    <link rel="stylesheet" href="/static/navbar2.css">
+
+
+    <script src='/static/position.js'></script>
+    <script src='/static/burgermenu.js'></script>
+    <title>Login</title>
+    <style>
+    input[type=submit] {
+        font-family: "Asap", sans-serif;
+        cursor: pointer;
+        color: #fff;
+        text-transform: uppercase;
+        width: 80px;
+        border: 0;
+        padding: 10px 0;
+        margin-top: 10px;
+        margin-left: -5px;
+        border-radius: 5px;
+        background-color: #534f44;
+        -webkit-transition: background-color 300ms;
+        -moz-transition: background-color 300ms;
+        transition: background-color 300ms;
+    }
+    </style>
+</head>
+<body>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+        <ul class="flashes">
+            {% for message in messages %}
+                <li>{{message}}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+    {% endwith %}
+    <div class="navbar">
+        <div class="topnav-right">
+            <a href="{{ url_for('home') }}" class="navbar-brand">Home</a>
+        </div>
+        <span style="font-size:30px;cursor:pointer" onclick="toggleNav()">&#9776;</span> 
+        <div id="mySidepanel" class="sidepanel">
+            <a href="{{ url_for('home') }}" class="navbar-item">Home</a>
+            <a href="{{ url_for('about') }}" class="navbar-item">About</a>
+            <a href="{{ url_for('register') }}" class="navbar-item">Register</a>
+        </div>
+    </div>
+    </div>
+    <form name='login-form'class="login2" action='/home/login-user' method='post'>
+        <h1>Welcome to Mangrove</h1>   
+        <input name="email-address" type="text" placeholder = "email address" required>
+        <input name="password" type="password" placeholder = "password" required>
+        <input type ="submit" value="Log In">
+        <div class ="foot-lnk">
+            <a href="{{ url_for('register') }}"class= "foot-lnk">Don't have an account? Sign up!</a>
+        </div>
+    </form>
+    </div>
+    </div>
+    </div> 
+    <script src="{{ url_for('static', filename='js/validate_users.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+
+</body>
+
+</html>

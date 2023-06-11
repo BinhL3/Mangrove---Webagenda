@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Calendar</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='site.css')}}" />
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.4/index.global.min.css" />
+        <script src='https://cdn.jsdelivr.net/npm/fullcalendar/index.global.min.js'></script>
+        <script src="https://unpkg.com/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+        <link rel="stylesheet" href="/static/dropdown.css">
+        <script src='/static/burgermenu.js'></script>
+        <script src='/static/position.js'></script>
+        <link rel="stylesheet" href="/static/navbar2.css">
+
+
+    </head>
+
+    <body>
+        <script src ='/static/navchanger.js'></script>
+
+        <div class="navbar">
+            <div class="topnav-right">
+                <a href="{{ url_for('home') }}" class="navbar-brand">Home</a>
+            </div>
+            <span style="font-size:30px;cursor:pointer" onclick="toggleNav()">&#9776;</span> 
+            <div id="mySidepanel" class="sidepanel">
+                <a href="{{ url_for('about2') }}" class="navbar-item">About</a>
+                <a href="{{ url_for('focus') }}" class="navbar-item">Focus</a>
+                <a href="{{ url_for('calendar') }}" class="navbar-item">Calendar</a>
+                <a href="{{ url_for('checklist') }}"class="navbar-item">Checklist</a>
+                <a href="{{ url_for('settings') }}" class="navbar-item">Settings</a>
+                <a href="{{ url_for('logout_user') }}" class="navbar-item">Logout</a>
+            </div>
+        </div>
+
+            
+            </a>
+        
+        </div>
+
+        <div class="calendarcss">
+        <div id="calendar">
+            <script>
+                document.addEventListener('DOMContentLoaded', function() {
+                    let calendarElement = document.getElementById('calendar');
+                
+                    let calendar = new FullCalendar.Calendar(calendarElement, {
+                        
+                        events: [
+                            {% for task in tasks %}
+                            { 
+                                title: '{{ task.task }}',
+                                start: '{{ task.date }}',
+                                backgroundColor: getRandomColor(), // Assign a random color to each event
+                                classNames: ['custom-event'] // Add a custom CSS class to the event
+
+                            },
+                            {% endfor %}
+                        ],
+                        
+                    });
+                
+                    calendar.render();
+                    
+                    function getRandomColor() {
+                        const letters = '0123456789ABCDEF';
+                        let color = '#';
+                        for (let i = 0; i < 6; i++) {
+                            color += letters[Math.floor(Math.random() * 16)];
+                        }
+                        return color;
+                    }
+                
+
+                });
+                </script>
+                
+            <hr/>
+            <footer>
+                <p>&copy; Mangrove 2023</p>
+            </footer>
+        </div>
+    </div>
+    </body>
+</html>

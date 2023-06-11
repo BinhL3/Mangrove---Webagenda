@@ -1,0 +1,50 @@
+.options{
+    /* margin-left: 30%; */
+    margin-top: 2%;
+    background-color: white;
+    border-radius: 10px;
+    border-left: 5px solid rgb(221, 221, 221);
+    border-bottom:6px solid rgb(221, 221, 221);
+    width: 55.65%;
+    height: 40%;
+    float: right;
+    display: inline;
+    margin-right: 5%;
+}
+
+p{
+    margin-top: 5%;
+    margin-left: 5%;
+}
+
+.picker{
+    /* display: inline; */
+    margin-left: 5%;
+    margin-top: 10px;
+}
+
+
+.settings-nav{
+    background-color: rgb(241, 241, 241);
+    margin-left: 12%;
+    margin-top: 2%;
+    width: 27%;
+    float: left;
+    height: 53%;
+}
+
+.location{
+    background-color: rgb(255, 255, 255);
+    height: 21%;
+    width: 100%;
+    border-color: rgb(255, 255, 255);
+    font-size: 120%;
+    border-radius: 10px;
+}
+
+h1{
+    background-color:rgba(227, 227, 227, 0.838);
+    color: black;
+    font-size: 130%;
+}
+

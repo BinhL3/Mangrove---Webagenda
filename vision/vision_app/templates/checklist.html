@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='site.css')}}" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/static/inputs.css">
+        <link rel="stylesheet" href="/static/buttons.css">
+        <link rel="stylesheet" href="/static/dropdown.css">
+        <link rel="stylesheet" href="/static/navbar2.css">
+        <link rel="stylesheet" href="/static/checklist2.css">
+        <script src='/static/burgermenu.js'></script>
+        <script src='/static/position.js'></script>
+        <script src ='/static/bgchanger.js'></script>
+        <script src ='/static/navchanger.js'></script>
+    <style>
+    input[type=submit] {
+        font-family: "Asap", sans-serif;
+        cursor: pointer;
+        color: #fff;
+        text-transform: uppercase;
+        width: 80px;
+        border: 0;
+        padding: 10px 0;
+        margin-top: 10px;
+        margin-left: -5px;
+        border-radius: 5px;
+        background-color: #534f44;
+        -webkit-transition: background-color 300ms;
+        -moz-transition: background-color 300ms;
+        transition: background-color 300ms;
+    }
+    </style>
+        <title>Checklist</title>
+</head>
+<body>
+      <script src ='/static/navchanger.js'></script>
+
+  {% with messages = get_flashed_messages() %}
+  {% if messages %}
+      <ul class="flashes">
+          {% for message in messages %}
+              <li>{{message}}</li>
+          {% endfor %}
+      </ul>
+  {% endif %}
+  {% endwith %}
+  <div class="navbar">
+    <div class="topnav-right">
+        <a href="{{ url_for('home') }}" class="navbar-brand">Home</a>
+    </div>
+    <span style="font-size:30px;cursor:pointer" onclick="toggleNav()">&#9776;</span> 
+    <div id="mySidepanel" class="sidepanel">
+      <a href="{{ url_for('about2') }}" class="navbar-item">About</a>
+      <a href="{{ url_for('focus') }}" class="navbar-item">Focus</a>
+      <a href="{{ url_for('calendar') }}" class="navbar-item">Calendar</a>
+      <a href="{{ url_for('checklist') }}"class="navbar-item">Checklist</a>
+      <a href="{{ url_for('settings') }}" class="navbar-item">Settings</a>
+      <a href="{{ url_for('logout_user') }}" class="navbar-item">Logout</a>
+  </div>
+</div>
+
+<br>
+
+<div class="backgroundbox">
+  
+    <form name='add-task-form' action= "{{'add_task'}}" method='post'>
+      <label> Task Name </label>
+      <input name="task_name" type="text" required>
+      <label> Description </label>
+      <input name="course_category" type="text" required>
+
+
+      <br>
+      
+      <span>
+        <label for="month">Month:</label>
+        <select name="month" id="month"></select>
+        </span>
+        <span>
+        <label for="day">Day:</label>
+        <select name="day" id="day"></select>
+        </span>
+        <span>
+        <label for="year">Year:</label>
+        <select name="year" id="year">Year:</select>
+        </span>
+    <input name="time" type="text" class="time-pickable" readonly>
+    <script src='/static/script3.js'></script>
+    <input type ="submit" value="Add Task">
+    </form>
+    <script src='/static/script2.js'></script>
+
+    <br>
+
+    {% if approaching_tasks %}
+    <div id="notifications">
+      <h2>Approaching Task Deadlines:</h2>
+      {% for task in approaching_tasks %}
+        <div class="notification">
+          <p>{{ task.task }}</p>
+          <p>Deadline: {{ task.date }}</p>
+        </div>
+      {% endfor %}
+    </div>
+  {% endif %}
+
+  <form action="{{ url_for('checklist') }}" method="POST">
+    <div class="chat-container">
+      <input type="text" name="user_input" placeholder="Ask a question" class="chat-input">
+      <button type="submit" class="chat-send">Send</button>
+    </div>
+  </form>
+  
+  {% if response %}
+  <div class="chat-container">
+    <div class="chat-response">{{ response }}</div>
+  </div>
+  {% endif %}
+  
+
+    <div id="task-list">
+      <p>Task</p><p>Description</p><p>Due Date</p><p></p>
+
+      {% for task in tasks %}
+          <p>{{task.task}}</p><p>{{task.course_category}}</p><p>{{task.date}}</p><a href="{{url_for('remove_task', task_name = task.task)}}">Delete</a>
+      {% endfor %}
+      
+    </div>
+    
+</html>

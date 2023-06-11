@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <link rel="stylesheet" href="/static/site.css">
+
+        <link rel="stylesheet" href="/static/dropdown.css">
+        <link rel="stylesheet" href="/static/navbar2.css">
+        <link rel="stylesheet" href="/static/settings.css">
+        <script src='/static/position.js'></script>
+        <script src='/static/burgermenu.js'></script>
+        <script src ='/static/bgchanger.js'></script>
+        <script src ='/static/navchanger.js'></script>
+
+    </head>
+    <title>Settings</title>
+
+<body>
+    <div class="navbar">
+        <div class="topnav-right">
+            <a href="{{ url_for('home') }}" class="navbar-brand">Home</a>
+        </div>
+        <span style="font-size:30px;cursor:pointer" onclick="toggleNav()">&#9776;</span> 
+        <div id="mySidepanel" class="sidepanel">
+            <a href="{{ url_for('about2') }}" class="navbar-item">About</a>
+            <a href="{{ url_for('focus') }}" class="navbar-item">Focus</a>
+            <a href="{{ url_for('calendar') }}" class="navbar-item">Calendar</a>
+            <a href="{{ url_for('checklist') }}"class="navbar-item">Checklist</a>
+            <a href="{{ url_for('settings') }}" class="navbar-item">Settings</a>
+            <a href="{{ url_for('logout_user') }}" class="navbar-item">Logout</a>
+        </div>
+    </div>
+
+
+
+    <div class = "options">
+        <h1> Preferences</h1>
+        <p>Choose your navbar color:</p>
+        <div class = "picker">
+            <input type="color" id="navbarPicker" onchange="changeNavbarColor(this.value)">
+        </div>
+        <p>Choose your background color:</p>
+        <div class = "picker">
+            <input type="color" id="bgPicker" onchange = "bgchange(this.value)">
+        </div>
+    </div>
+
+    <div class = 'settings-nav'>
+        <h1>Settings</h1>
+        <button class="location">General</button>
+        <button class="location">Privacy</button>
+        <button class="location">Preferences</button>
+        <button class="location">Profile</button>
+
+    </div>
+
+    <script src="script4.js"></script>
+
+
+</body>
+
+</html>

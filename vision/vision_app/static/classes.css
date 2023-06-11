@@ -1,0 +1,100 @@
+
+.classes{
+    float: left; 
+    margin-left: 260px;
+    margin-right: 70px;
+    margin-bottom: 30px;
+    border: 4px solid rgb(105, 124, 95);
+    border-radius: 4px;
+    background-color: rgb(255, 255, 255);
+    padding-left: 0px;
+    width: 33%;
+    display: inline;
+}
+
+.upcoming{
+    float: right;
+    width: 20%;
+    /* border: 4px solid rgb(105, 124, 95);
+    border-radius: 4px; */
+    /* background-color: rgb(131, 115, 154); */
+    margin-right: 50px;
+    margin-top: 40px;
+    padding: 20px;
+    /* height: 100%; */
+}
+
+.hw{
+    width: 33%;
+    float: left;
+    border-right: 1px dotted black;
+}
+
+h1{
+    color: rgb(255, 255, 255);
+    font-size: 18px;
+    text-align: center;
+    background-color: rgb(105, 124, 95);
+    margin-top: 0px;
+    width: 100%
+
+}
+
+h2{
+    color: rgb(85, 75, 98);
+    background-color: rgb(142, 125, 165) ;
+    font-size: 15px;
+    width: 50%;
+    text-align: center;
+    margin: auto;
+    margin-top: 10px;
+}
+
+.assignments{
+    font-size: 12px;
+}
+
+.card{
+    background-color:rgb(255, 255, 255);
+    padding: 10px;
+}
+
+.collapsible {
+    float: left; 
+    margin-left: 260px;
+    margin-right: 70px;
+    border-color:rgb(236, 236, 236);
+    border-left: 9px solid rgb(157, 157, 143);
+    border-radius: 4px;
+    background-color: rgb(255, 255, 255);
+    padding-left: 0px;
+    width: 33%;
+    height: 9%;
+    display: inline;
+    font-size: 18px;
+    font-family: 'Poppins', sans-serif;
+    margin-top: 40px;
+    box-shadow:inset;
+  }
+
+  .active, .collapsible:hover {
+    background-color: #cfcfcf;
+  }
+  
+  .content {
+    padding: 0px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    float: left; 
+    margin-left: 260px;
+    margin-right: 80px;
+    background-color: rgb(255, 255, 255);
+    width: 33%;
+    display: inline;
+  }
+
+  .box{
+    box-shadow: inset;
+    background-color: white;
+  }
